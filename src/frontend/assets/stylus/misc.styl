@@ -1,0 +1,165 @@
+
+// Misc
+.width-container
+    max-width 1200px !important
+    padding 0 32px
+
+#app.theme--light
+    background var(--v-white-dark-base)
+
+.fill-width
+    width 100%
+
+.flex-1
+    flex 1
+
+.text-nowrap
+    white-space nowrap
+
+.text-underline
+    text-decoration underline
+
+.highlighted-text
+    background var(--v-primary-base)
+    padding 3px 1px
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
+
+
+.full-height-dialog
+    margin: 0 !important
+    max-height: none !important
+    height 100% !important
+    border-radius 0 !important
+    box-shadow none
+
+.text-none
+    text-decoration none
+
+.upload-btn
+    padding 0 !important
+    position: relative;
+
+    .v-btn__content
+        height 100%
+
+    >>> .v-btn__content
+        height 100%
+        width 100%
+        display flex
+        cursor pointer !important
+
+    .v-input__control
+        display none
+
+    .v-input__prepend-outer, .v-input
+        position: absolute;
+        top 0
+        right: 0;
+        z-index: 9;
+        width 100%
+        height 100%
+        margin 0 !important
+
+        .v-input__icon
+            border-radius 0 !important
+            height 100% !important
+
+            .v-icon
+                height 100%
+                width 100%
+                opacity 0
+
+// Common Dialog styles
+.dialog-bottom-row
+    background var(--v-black-base)
+    display flex
+    align-items center
+    justify-content center
+    position relative
+    z-index 1
+    min-height 100px
+    width 100%
+
+.primary-border-dialog-container
+    border 4px solid var(--v-primary-base) !important
+    background var(--v-white-base)
+    border-bottom-width 10px !important
+
+
+// Shadow Motifs
+.motif-left
+    box-shadow: 7px 5px var(--v-primary-lightest-base)
+
+.motif.right
+    left 5px
+    top 5px
+
+// click event stuff
+.cursor-pointer
+    cursor pointer
+
+.cursor-default
+    cursor default !important
+
+.no-pointer-events
+    pointer-events none
+
+.no-click-highlight
+    &:focus
+        opacity .6 !important
+        transition 0s
+
+    &:active
+        opacity .4 !important
+        transition 0s
+
+    .v-ripple__container
+        display none !important
+
+    &::before
+        display none !important
+
+
+#confetti-canvas {
+    z-index: 999 !important;
+}
+
+
+.theme--light.chip-tabs
+    height 34px
+
+    .v-tabs-bar
+        background transparent
+
+        .v-tab
+            text-transform none
+            color black !important
+            height 26px
+            padding 0 4px
+            border-radius 4px
+            margin 0 4px
+            font-size 13px
+
+            &.v-tab--active
+                font-weight 700
+                background var(--v-primary-lightest-base)
+
+
+/* OVERRIDING HUBSPOT LEAD FORM STYLES */
+.leadinModal-content {
+    font-family: 'Greycliff';
+    font-weight: 500;
+}
+
+.leadinModal-content h4 {
+    font-family: Poppins;
+    font-weight: 800;
+}
+
+.leadin-button {
+    font-weight: 800;
+    height: 45px;
+    font-size: 18px;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+}
