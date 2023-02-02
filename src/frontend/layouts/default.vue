@@ -4,7 +4,9 @@
       <v-app-bar max-height="74px" height="74px" class="z-index-1 elevation-0 white">
         <v-container class="width-container d-flex justify-space-between fill-width">
           <!-- TODO: Export to header file eventually -->
-          <div class="weight-700 font-24">Adventure Fund</div>
+          <nuxt-link to="/" class="text-none">
+            <div class="black--text weight-700 font-24">Adventure Fund</div>
+          </nuxt-link>
           <v-icon size="30" color="black">mdi-account-circle</v-icon>
         </v-container>
       </v-app-bar>

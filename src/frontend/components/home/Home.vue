@@ -38,7 +38,7 @@
 
       <v-tabs-items v-model="active_tab">
         <v-tab-item>
-          <WorldView/>
+          <MapView :markers="markers"/>
         </v-tab-item>
         <v-tab-item>
           <ListView :projects="[project,project,project,project,project]" class="mt-5"/>
@@ -51,23 +51,41 @@
 <script>
 import ProjectCardLarge from "../ui/project-cards/ProjectCardLarge"
 import ProjectCardWide from "../ui/project-cards/ProjectCardWide"
-import WorldView from "./MapView"
+import MapView from "./MapView"
 import ListView from "./ListView"
 
 export default {
-  components: { ListView, WorldView, ProjectCardWide, ProjectCardLarge },
+  components: { ListView, MapView, ProjectCardWide, ProjectCardLarge },
   data() {
     return {
       active_tab: 0,
       project: {
+        id: 1,
         banner_image: "https://images.unsplash.com/photo-1501963589393-2e1552dfa94a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dW5kZXJ3YXRlciUyMGFkdmVudHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         title: "The Search for a World Underwater",
         author: "Chris Colombus",
         goal: 150000,
-        decription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to Lorem ipsume doreim latchi mach nati Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to Lorem ipsume doreim latchi mach nati Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris",
         contribution_count: 1200,
         percent_funded: 40
-      }
+      },
+      markers: [
+        { x: 19.9, y: 43.17 },
+        { x: 46.67, y: 90.67 },
+        { x: 60.17, y: 74.67 },
+        { x: 43.4, y: 40.67 },
+        { x: 97.67, y: 75 },
+        { x: 16.1, y: 77.83 },
+        { x: 75.3, y: 38.67 },
+        { x: 88.1, y: 83.17 },
+        { x: 91.7, y: 77.83 },
+        { x: 77.4, y: 70.5 },
+        { x: 62.7, y: 49.33 },
+        { x: 58.3, y: 78.17 },
+        { x: 42.3, y: 48 },
+        { x: 30.6, y: 25.17 },
+        { x: 21.2, y: 80.83 }
+      ]
     }
   }
 }

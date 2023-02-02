@@ -33,7 +33,7 @@
         </v-sheet>
       </div>
       <div class="ml-5 description" v-if="show_description">
-        {{ project.decription }}
+        {{ project.description }}
       </div>
     </div>
   </v-card-text>
