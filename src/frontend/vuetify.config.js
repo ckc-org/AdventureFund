@@ -8,6 +8,7 @@ export default {
     themes: {
       light: {
         primary: '#0F7CE1',
+        grey: "#D9D9D9"
       }
     }
   },

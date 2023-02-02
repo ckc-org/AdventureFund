@@ -1,5 +1,5 @@
 <template>
-  <v-card height="140" class="d-flex overflow-hidden">
+  <v-card height="140" class="d-flex overflow-hidden" @click="$router.push(`/projects/${project.id}/`)">
     <v-img
       :src="project.banner_image"
       height="100%"

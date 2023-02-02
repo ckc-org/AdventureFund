@@ -1,5 +1,5 @@
 <template>
-  <v-card class="elevation-0" width="360px">
+  <v-card class="elevation-0" width="360px" @click="$router.push(`/projects/${project.id}/`)">
     <v-img
       :src="project.banner_image"
       height="100%"
