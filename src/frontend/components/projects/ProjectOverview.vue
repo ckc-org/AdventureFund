@@ -28,13 +28,15 @@
         <div class="font-30 weight-700">
           About this project:
         </div>
-        <v-sheet v-html="project.about_section" class="transparent mt-6 mr-7" max-width="100%">
+        <v-sheet v-html="project.about_section" class="transparent mt-6 mr-10" max-width="100%">
 <!--          This will be sanitized when saved to DB-->
         </v-sheet>
       </v-col>
       <v-col cols="4">
+        <div class="right-sticky-container">
         <AboutAuthor :project="project"/>
         <LocationBlock class="mt-7" :project="project"/>
+        </div>
       </v-col>
     </v-row>
 
@@ -70,6 +72,10 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+.right-sticky-container
+  position: sticky;
+  top: 20px;
+
 .row
   margin 0
   padding 0

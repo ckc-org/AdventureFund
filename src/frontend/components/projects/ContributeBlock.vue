@@ -1,5 +1,10 @@
 <template>
   <v-card height="420px" class="fill-width">
+    <v-progress-linear
+      :value="project.percent_funded"
+      background-color="transparent"
+      height="1px"
+    />
     <v-card-text class="pa-6">
       <div class="d-flex">
         <!--Top section-->
@@ -107,11 +112,11 @@
             class="white--text primary fill-width mt-3"
             height="50"
           >
-            Contribute ${{ selected_amount  || '0.00' }}
+            Contribute ${{ selected_amount || '0.00' }}
           </v-btn>
           <div class="mt-2" v-if="!show_custom_amount">
             Your contribution will get Chrisopher Colombus to
-            ${{ $format_with_commas(selected_amount + project.amount_funded)  }} of his
+            ${{ $format_with_commas(selected_amount + project.amount_funded) }} of his
             ${{ $format_with_commas(project.goal) }} goal.
           </div>
         </div>
