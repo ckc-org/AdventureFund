@@ -8,7 +8,6 @@ export default ({ store }) => {
     if (process.browser) {
       /* Wait for $nuxt to load */
       onNuxtLoad(() => {
-        console.log("FIRING")
         store.commit('app/set_window_width', window.innerWidth)
         window.addEventListener('resize', () => {
           store.commit('app/set_window_width', window.innerWidth)
@@ -21,7 +20,6 @@ export default ({ store }) => {
 }
 
 function onNuxtLoad(cb) {
-  console.log('firing')
   // This waits for our nuxt app to be attached to the window
   if (!window.$nuxt) {
     setTimeout(() => {
