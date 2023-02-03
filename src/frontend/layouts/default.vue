@@ -13,7 +13,6 @@
               <v-icon size="30" color="black">mdi-account-circle</v-icon>
             </nuxt-link>
           </div>
-
         </v-container>
       </v-app-bar>
     </div>
