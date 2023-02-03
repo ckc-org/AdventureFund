@@ -13,7 +13,7 @@
         Select payment method:
       </v-card-title>
       <v-card-text>
-<!--        List of payment methods tied to this user here-->
+        <!--        List of payment methods tied to this user here-->
         <!--        <PaymentMethod />-->
       </v-card-text>
       <v-card-actions class="d-flex justify-space-between align-end mt-3">
