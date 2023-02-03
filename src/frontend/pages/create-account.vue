@@ -3,10 +3,10 @@
     <div class="d-flex align-center justify-center fill-width">
       <v-card width="500" max-width="100%">
         <v-toolbar color="primary" dark flat>
-          <v-toolbar-title>Login</v-toolbar-title>
+          <v-toolbar-title>Create Account</v-toolbar-title>
         </v-toolbar>
 
-        <v-form @submit.prevent="login" novalidate>
+        <v-form @submit.prevent="create_account" novalidate>
           <v-card-text>
             <v-alert outlined type="error" v-if="errors.non_field_errors || errors.detail">
               <ul>
@@ -36,10 +36,9 @@
           </v-card-text>
 
           <v-card-actions>
-            <nuxt-link to="/passwordReset">Forgot password?</nuxt-link>
+            <v-btn type="button" depressed @click="$router.push('/login')">Go to login</v-btn>
             <v-spacer></v-spacer>
-            <v-btn type="button" depressed @click="$router.push('/create-account')"> Sign up</v-btn>
-            <v-btn type="submit" depressed class="primary" :loading="loading">Login</v-btn>
+            <v-btn type="submit" depressed class="primary" :loading="loading">Create Account</v-btn>
           </v-card-actions>
         </v-form>
       </v-card>
@@ -54,26 +53,19 @@ export default {
   data() {
     return {
       errors: {},
-      loading: false,
       form: {
         email: '',
         password: ''
       },
-      remember_me: true
+      loading: false
     }
   },
   methods: {
-    async login() {
+    async create_account() {
       try {
         this.loading = true
-        await this.$auth.login({ data: this.form })
-
-        this.$nuxt.$router.push('/')
-
-        // IMPORTANT! Do our initializing! (from our auth plugin)
-        this.$auth.ctx.app.project_initialize()
-
-        this.errors = {}
+        await this.$store.dispatch('users/create_user', this.form)
+        await this.$router.push('/login')
       } catch (e) {
         if (e.response) {
           this.errors = e.response.data

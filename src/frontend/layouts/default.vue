@@ -7,7 +7,13 @@
           <nuxt-link to="/" class="text-none">
             <div class="black--text weight-700 font-24">Adventure Fund</div>
           </nuxt-link>
-          <v-icon size="30" color="black">mdi-account-circle</v-icon>
+          <div class="d-flex align-center">
+            <div v-if="$auth.loggedIn" class="mr-2 font-14 weight-700">{{ $auth.user.email }}</div>
+            <nuxt-link :to="$auth.loggedIn ? '/' : '/login'" class="text-none">
+              <v-icon size="30" color="black">mdi-account-circle</v-icon>
+            </nuxt-link>
+          </div>
+
         </v-container>
       </v-app-bar>
     </div>
